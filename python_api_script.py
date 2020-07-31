@@ -1,3 +1,7 @@
+# Import model dictionaries
+from dict.text import text
+from dict.vision import vision
+
 #download model through url
 import urllib.request
 from onnxruntime import InferenceSession
