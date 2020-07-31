@@ -6,24 +6,34 @@ from dict.vision import vision
 import urllib.request
 from onnxruntime import InferenceSession
 
+#regular expression
+import re
+
 class onnx_zoo:
     
     def __init__(self, model_name, saved_path):
-        PATH_MAP = {
-        #Image Classification
-        "mobilenetv2-7": "https://github.com/onnx/models/blob/master/vision/classification/mobilenet/model/mobilenetv2-7.onnx?raw=true"
-        } 
-        self.name = model_name + ".onnx"
+        
+        #obtain model file name through regular expression
+        pattern = re.compile(".*/([^/]+\\.onnx).*");
+        m = pattern.match(self.path);
+        self.file_name = m.group(1)
+        
+        #save the intended directory path
         self.saved_path = saved_path
-        self.path = PATH_MAP.get(model_name)
+        
+        #obtain model url through dict
+        if vision.get(model_name) != None:
+            self.path = vision.get(model_name)
+        elif text.get(model_name) != None:
+            self.path = text.get(model_name)
+        else:
+            print("model name does not exist")
             
         
     def get_pretrained(self):
-        #model_path = "https://github.com/onnx/models/blob/master/vision/classification/resnet/model/"
-        #raw = "?raw=true"
-        url = self.path 
-        url_input = self.saved_path + self.name
-        urllib.request.urlretrieve(url, url_input)
+        model_url = self.path 
+        model_directory = self.saved_path + self.file_name
+        urllib.request.urlretrieve(model_url, model_directory)
         
     def get_metadata(self):
         sess = InferenceSession(self.name)
