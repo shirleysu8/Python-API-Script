@@ -36,7 +36,7 @@ class onnx_zoo:
         urllib.request.urlretrieve(model_url, model_directory)
         
     def get_metadata(self):
-        sess = InferenceSession(self.name)
+        sess = InferenceSession(self.file_name)
         meta = sess.get_modelmeta()
         
         print("custom_metadata_map={}".format(meta.custom_metadata_map))
