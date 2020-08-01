@@ -1,34 +1,30 @@
-# Import model dictionaries
-from dict.text import text
-from dict.vision import vision
+# import model dictionaries
+from dict.models import modelDict
 
-#download model through url
+# download model through url
 import urllib.request
 from onnxruntime import InferenceSession
 
-#regular expression
+# regular expression
 import re
 
 class onnx_zoo:
     
     def __init__(self, model_name, saved_path):
         
-        #obtain model file name through regular expression
+        # save the intended directory path
+        self.saved_path = saved_path
+        
+        # obtain model url through dict
+        if modelDict.get(model_name) != None:
+            self.path = modelDict.get(model_name)
+        else:
+            print("model name does not exist")
+        
+        # obtain model file name through regular expression
         pattern = re.compile(".*/([^/]+\\.onnx).*");
         m = pattern.match(self.path);
         self.file_name = m.group(1)
-        
-        #save the intended directory path
-        self.saved_path = saved_path
-        
-        #obtain model url through dict
-        if vision.get(model_name) != None:
-            self.path = vision.get(model_name)
-        elif text.get(model_name) != None:
-            self.path = text.get(model_name)
-        else:
-            print("model name does not exist")
-            
         
     def get_pretrained(self):
         model_url = self.path 
