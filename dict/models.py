@@ -112,4 +112,6 @@ modelDict = {"bert-squad" : "https://github.com/onnx/models/blob/master/text/mac
 "rain-princess-9" : "https://github.com/onnx/models/blob/master/vision/style_transfer/fast_neural_style/model/rain-princess-9.onnx?raw=true" ,
 "udnie-8" : "https://github.com/onnx/models/blob/master/vision/style_transfer/fast_neural_style/model/udnie-8.onnx?raw=true" ,
 "udnie-9" : "https://github.com/onnx/models/blob/master/vision/style_transfer/fast_neural_style/model/udnie-9.onnx?raw=true" ,
-"sub_pixel_cnn_2016" : "https://github.com/onnx/models/blob/master/vision/super_resolution/sub_pixel_cnn_2016/model/super-resolution-10.onnx?raw=true"}
+"sub_pixel_cnn_2016" : "https://github.com/onnx/models/blob/master/vision/super_resolution/sub_pixel_cnn_2016/model/super-resolution-10.onnx?raw=true",
+ "roberta": "https://github.com/onnx/models/blob/master/text/machine_comprehension/roberta/model/roberta-base-11.onnx?raw=true",
+  "roberta-sequence-classification-9": "https://github.com/onnx/models/blob/master/text/machine_comprehension/roberta/model/roberta-sequence-classification-9.onnx?raw=true"}
