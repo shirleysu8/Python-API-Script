@@ -32,7 +32,7 @@ class onnx_zoo:
         urllib.request.urlretrieve(model_url, model_directory)
         
     def get_metadata(self):
-        sess = InferenceSession(self.file_name)
+        sess = InferenceSession(self.saved_path + self.file_name)
         meta = sess.get_modelmeta()
         
         print("custom_metadata_map={}".format(meta.custom_metadata_map))
@@ -41,6 +41,7 @@ class onnx_zoo:
         print("graph_name={}".format(meta.graph_name))
         print("producer_name={}".format(meta.producer_name))
         print("version={}".format(meta.version))
+        
         
         
 #mobilenet = onnx_zoo("mobilenetv2-7", "/Users/shirleysu/Downloads/")
