@@ -34,19 +34,16 @@ class onnx_zoo:
     def get_metadata(self):
         sess = InferenceSession(self.saved_path + self.file_name)
         meta = sess.get_modelmeta()
-        
-        if meta.custom_metadata_map != "":
+
+        if meta is not None:
             print("custom_metadata_map={}".format(meta.custom_metadata_map))
-        if meta.description != "":
             print("description={}".format(meta.description))
-        if meta.domain != "":
             print("domain={}".format(meta.domain, meta.domain))
-        if meta.graph_name != "":
             print("graph_name={}".format(meta.graph_name))
-        if meta.producer_name != "":
             print("producer_name={}".format(meta.producer_name))
-        if meta.version != "":
             print("version={}".format(meta.version))
+        else:
+            print("Meta does not exist")
         
         
 #mobilenet = onnx_zoo("mobilenetv2-7", "/Users/shirleysu/Downloads/")
