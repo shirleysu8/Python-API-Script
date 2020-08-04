@@ -22,8 +22,8 @@ class onnx_zoo:
             print("model name does not exist")
         
         # obtain model file name through regular expression
-        pattern = re.compile(".*/([^/]+\\.onnx).*");
-        m = pattern.match(self.path);
+        pattern = re.compile(".*/([^/]+\\.onnx).*")
+        m = pattern.match(self.path)
         self.file_name = m.group(1)
         
     def get_pretrained(self):
