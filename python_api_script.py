@@ -4,6 +4,8 @@ from dict.models import modelDict
 # download model through url
 import urllib.request
 from onnxruntime import InferenceSession
+import sys
+import os
 
 # regular expression
 import re
@@ -32,8 +34,23 @@ class onnx_zoo:
         urllib.request.urlretrieve(model_url, model_directory)
         
     def get_metadata(self):
-        sess = InferenceSession(self.saved_path + self.file_name)
-        meta = sess.get_modelmeta()
+        try:
+            sess = InferenceSession(self.saved_path + self.file_name)
+        except OSError as err:
+            print("OS error: {0}".format(err))
+            sys.exit()
+        except:
+            print("Error: Load " + self.file_name + " model first.")
+            sys.exit()
+        
+        try:
+            meta = sess.get_modelmeta()
+        except OSError as err:
+            print("OS error: {0}".format(err))
+            sys.exit()
+        except:
+           print("Error: " + self.file_name + " model metadata is too big.")
+           sys.exit()
 
         if meta is not None:
             print("custom_metadata_map={}".format(meta.custom_metadata_map))
@@ -45,6 +62,6 @@ class onnx_zoo:
         else:
             print("Meta does not exist")
         
-        
+
 #mobilenet = onnx_zoo("mobilenetv2-7", "/Users/shirleysu/Downloads/")
 #mobilenet.get_pretrained()
