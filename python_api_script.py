@@ -3,6 +3,7 @@ from dict.models import modelDict
 
 # download model through url
 import urllib.request
+import onnx
 from onnxruntime import InferenceSession
 import sys
 import os
@@ -32,6 +33,12 @@ class onnx_zoo:
         model_url = self.path 
         model_directory = self.saved_path + self.file_name
         urllib.request.urlretrieve(model_url, model_directory)
+        try:
+            onnx.checker.check_model(self.saved_path + self.file_name)
+            print("Successfully downloaded the model!")
+        except Exception:
+            print("Error: " + Exception)
+            sys.exit()
         
     def get_metadata(self):
         try:
@@ -62,6 +69,9 @@ class onnx_zoo:
         else:
             print("Meta does not exist")
         
+
+mobile = onnx_zoo("roberta", "/users/kundanapillari/Desktop/")
+mobile.get_pretrained()
 
 #mobilenet = onnx_zoo("mobilenetv2-7", "/Users/shirleysu/Downloads/")
 #mobilenet.get_pretrained()
