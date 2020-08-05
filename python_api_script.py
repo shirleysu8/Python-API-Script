@@ -70,8 +70,5 @@ class onnx_zoo:
             print("Meta does not exist")
         
 
-mobile = onnx_zoo("roberta", "/users/kundanapillari/Desktop/")
-mobile.get_pretrained()
-
 #mobilenet = onnx_zoo("mobilenetv2-7", "/Users/shirleysu/Downloads/")
 #mobilenet.get_pretrained()
