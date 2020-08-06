@@ -1,5 +1,6 @@
 # import model dictionaries
 from dict.models import modelDict
+from dict.model_versions import versionDict
 
 # download model through url
 import urllib.request
@@ -7,6 +8,13 @@ from onnxruntime import InferenceSession
 
 # regular expression
 import re
+
+def get_model_versions(model):
+    
+        if versionDict.get(model) != None:
+             print(versionDict.get(model))
+        else:
+            print("model name does not exist")
 
 class onnx_zoo:
     
@@ -51,3 +59,4 @@ class onnx_zoo:
         
 #mobilenet = onnx_zoo("mobilenetv2-7", "/Users/shirleysu/Downloads/")
 #mobilenet.get_pretrained()
+#get_model_versions("efficientnet-lite4")
