@@ -37,9 +37,9 @@ class onnx_zoo:
         try:
             onnx.checker.check_model(self.saved_path + self.file_name)
             print("Successfully downloaded the model!")
-        except Exception:
-            print("Error: " + Exception)
-            sys.exit()
+        except: # catch all exceptions
+            e = syst.exc_info()[0]
+            write_to_page("Error: %s" %e)
         
     def get_metadata(self):
         try:
