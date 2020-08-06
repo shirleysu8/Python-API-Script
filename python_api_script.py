@@ -19,6 +19,7 @@ def get_model_versions(model):
              print(versionDict.get(model))
         else:
             print("model name does not exist")
+            sys.exit()
 
 class onnx_zoo:
     
@@ -30,6 +31,7 @@ class onnx_zoo:
         saved_path = input("Enter saved path: ")
         if(os.path.exists(saved_path) == False):
             print("Error: Invalid path")
+            sys.exit()
         
         # save the intended directory path
         self.saved_path = saved_path
