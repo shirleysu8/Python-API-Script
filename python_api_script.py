@@ -14,15 +14,24 @@ import os
 import re
 
 def get_model_versions(model):
-        # call model versions dictionaries 
+        # call model versions dictionaries
         if versionDict.get(model) != None:
              print(versionDict.get(model))
         else:
             print("model name does not exist")
+            sys.exit()
 
 class onnx_zoo:
     
-    def __init__(self, model_name, saved_path):
+    def __init__(self):
+        
+        name = input("Enter model name: ")
+        get_model_versions(name)
+        model_name = input("Enter model name from options: ")
+        saved_path = input("Enter saved path: ")
+        if(os.path.exists(saved_path) == False):
+            print("Error: Invalid path")
+            sys.exit()
         
         # save the intended directory path
         self.saved_path = saved_path
@@ -31,7 +40,7 @@ class onnx_zoo:
         if modelDict.get(model_name) != None:
             self.path = modelDict.get(model_name)
         else:
-            print("model name does not exist")
+            print("Error: Model name does not exist")
         
         # obtain model file name through regular expression
         pattern = re.compile(".*/([^/]+\\.onnx).*")
@@ -39,7 +48,7 @@ class onnx_zoo:
         self.file_name = m.group(1)
         
     def get_pretrained(self):
-        model_url = self.path 
+        model_url = self.path
         model_directory = self.saved_path + self.file_name
         urllib.request.urlretrieve(model_url, model_directory)
         try:
@@ -78,6 +87,9 @@ class onnx_zoo:
         else:
             print("Metadata does not exist")
         
+
+#mobile = onnx_zoo()
+#mobile.get_metadata()
 
 #mobilenet = onnx_zoo("mobilenetv2-7", "/Users/shirleysu/Downloads/")
 #mobilenet.get_pretrained()
