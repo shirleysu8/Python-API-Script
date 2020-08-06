@@ -14,7 +14,7 @@ import os
 import re
 
 def get_model_versions(model):
-    
+        # call model versions dictionaries 
         if versionDict.get(model) != None:
              print(versionDict.get(model))
         else:
