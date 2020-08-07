@@ -28,7 +28,7 @@ class onnx_zoo:
         name = input("Enter model name: ")
         get_model_versions(name)
         model_name = input("Enter model name from options: ")
-        saved_path = input("Enter saved path: ")
+        saved_path = input("Enter path to save the model: ")
         if(os.path.exists(saved_path) == False):
             print("Error: Invalid path")
             sys.exit()
