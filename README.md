@@ -42,9 +42,6 @@ To download the model and output its metadata, run the following functions:
 ```
 
 
-
-    
-
 ## Installation 
 Install onnx to check models
 
@@ -53,3 +50,7 @@ Install onnx to check models
 Install [onnxruntime](https://github.com/microsoft/onnxruntime) to run onnx models
 
 ```pip install onnxruntime```
+
+## Contributors
+ 
+[Kundana Pillari](https://github.com/kundanapillari), [Jennifer Wang](https://github.com/jennifererwangg), [Shirley Su](https://github.com/shirleysu8)
