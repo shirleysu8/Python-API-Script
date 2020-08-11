@@ -4,7 +4,7 @@ Onnx Python API Script used to download and save pretrained models from [onnx mo
 ## Features 
 
 
-```get_model_versions(model name)``` - Retrieves an array of all the versions of the specificed model folder in the Onnx Model Zoo. 
+```get_model_versions(MODEL_FOLDER_NAME)``` - Retrieves an array of all the versions of the specificed model folder in the Onnx Model Zoo. 
    
 ```get_pretrained()``` - Downloads and saves specific onnx models to desired path.
             
@@ -14,7 +14,7 @@ Onnx Python API Script used to download and save pretrained models from [onnx mo
 ## Intialization and Usage
 Initiate the object by calling onnx_zoo class name.
 ```
-MODEL_NAME = onnx_zoo()
+OBJECT_NAME = onnx_zoo()
 ```
 The Python scipt will then ask to input the model folder name. When inputting the name, it should be in all lowercase. 
 
@@ -37,8 +37,8 @@ From the array of versions, input the version that will be downloaded and input 
 To download the model and output its metadata, run the following functions:
 
 ``` 
-    MODEL_NAME.get_pretrained()
-    MODEL_NAME.get_metadata()
+    OBJECT_NAME.get_pretrained()
+    OBJECT_NAME.get_metadata()
 ```
 
 
