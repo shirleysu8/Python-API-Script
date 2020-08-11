@@ -32,7 +32,7 @@ From the array of versions, input the version that will be downloaded and input 
 
 ``` 
 Enter model name from options: resnet101-v1-7 
-Enter saved path: /Users/name/Downloads/
+Enter saved path: /Users/name/Downloads
 ```
 
 To download the model and output its metadata, run the following functions:
