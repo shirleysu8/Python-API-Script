@@ -5,30 +5,13 @@ Onnx Python API Script used to download and save pretrained models from [onnx mo
 
 
 ```get_model_versions(model name)``` - Retrieves an array of all the versions of the specificed model folder in the Onnx Model Zoo. 
-    Example: 
-        Input:
-            ```
-            # Initiate the onnx_zoo class object.
-            resnet = onnx_zoo()
-            # Input the model name, in all lowercase, into the method.
-            get_model_versions(resnet)
-            ```
-        Ouput: 
-            
-            ```
-            # Outputs all the model's versions into an array. These model file names can then be inputted into the onnx_zoo class to download and view its metadata.
-            ['resnet101-v1-7', 'resnet101-v2-7', 'resnet152-v1-7', 'resnet152-v2-7', 'resnet18-v1-7', 'resnet18-v2-7', 'resnet34-v1-7', 'resnet34-v2-7', 'resnet50-caffe2-v1-3', 'resnet50-caffe2-v1-6', 'resnet50-caffe2-v1-7', 'resnet50-caffe2-v1-8', 'resnet50-caffe2-v1-9', 'resnet50-v1-7', 'resnet50-v2-7']```
-    
-
+   
 ```get_pretrained()``` - Downloads and saves specific onnx models to desired path.
-            Example Inputs: 
-               Model File Name : ``` resnet101-v1-7 ``` 
-               Saved Directory Path : ``` /Users/name/Downloads ```
-       
+            
 
 ```get_metadata()``` - Retrieves metadata of the onnx model. 
         
-## Intialization 
+## Intialization and Usage
 Initiate the object by calling onnx_zoo class name.
 ```
 MODEL_NAME = onnx_zoo()
