@@ -18,11 +18,15 @@ MODEL_NAME = onnx_zoo()
 ```
 The Python scipt will then ask to input the model folder name. When inputting the name, it should be in all lowercase. 
 
-```Enter Model Name: resnet```
+```
+Enter Model Name: resnet
+```
                        
 After model folder name is inputted, the script will output all the model versions that exist in the folder. 
 
-```['resnet101-v1-7', 'resnet101-v2-7', 'resnet152-v1-7', 'resnet152-v2-7', 'resnet18-v1-7', 'resnet18-v2-7', 'resnet34-v1-7', 'resnet34-v2-7', 'resnet50-caffe2-v1-3', 'resnet50-caffe2-v1-6', 'resnet50-caffe2-v1-7', 'resnet50-caffe2-v1-8', 'resnet50-caffe2-v1-9', 'resnet50-v1-7', 'resnet50-v2-7'] ```
+```
+['resnet101-v1-7', 'resnet101-v2-7', 'resnet152-v1-7', 'resnet152-v2-7', 'resnet18-v1-7', 'resnet18-v2-7', 'resnet34-v1-7', 'resnet34-v2-7', 'resnet50-caffe2-v1-3', 'resnet50-caffe2-v1-6', 'resnet50-caffe2-v1-7', 'resnet50-caffe2-v1-8', 'resnet50-caffe2-v1-9', 'resnet50-v1-7', 'resnet50-v2-7']
+```
 
 From the array of versions, input the version that will be downloaded and input the local directory that the model will be saved in.
 
