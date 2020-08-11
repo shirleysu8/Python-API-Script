@@ -30,15 +30,16 @@ After model folder name is inputted, the script will output all the model versio
 
 From the array of versions, input the version that will be downloaded and input the local directory that the model will be saved in.
 
-``` Enter model name from options: resnet101-v1-7 
-    Enter saved path: /Users/name/Downloads
+``` 
+Enter model name from options: resnet101-v1-7 
+Enter saved path: /Users/name/Downloads/
 ```
 
 To download the model and output its metadata, run the following functions:
 
 ``` 
-    OBJECT_NAME.get_pretrained()
-    OBJECT_NAME.get_metadata()
+OBJECT_NAME.get_pretrained()
+OBJECT_NAME.get_metadata()
 ```
 
 
